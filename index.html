@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<!--References are listed in the README.txt file-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Final Project</title>
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Synthesizer</h1>
+						
+            <div id="keyboard"></div>
+		
+		<br>
+		
+		<!--Wave Type Options-->
+		<label for='waveType1'>Wave Type 1: 
+            <select name="waveType1" class="wavetype1">
+                <option value="sine">sine</option>
+                <option value="square">square</option>
+                <option value="sawtooth">sawtooth</option>
+                <option value="triangle">triangle</option>
+            </select>
+        </label>
+		
+		<label for='waveType2'>Wave Type 2: 
+            <select name="waveType2" class="wavetype2">
+                <option value="sine">sine</option>
+                <option value="square">square</option>
+                <option value="sawtooth">sawtooth</option>
+                <option value="triangle">triangle</option>
+            </select>
+        </label>
+			
+			<!--Volume -->
+			<p>Volume: <input type="range" min="0" max="100" value="100" onchange="changeVolume(this);"></p>
+		
+			<!--Envelope Generator-->
+			<p>Envelope Generator</p>
+			<label for='egAttack'>Attack (time) 
+				<input class='eg-attack' type='range' min='0' max='1' step='0.05' value='0' name='egAttack' />
+			</label><br>
+			
+			<label for='egDecay'>Decay (time) 
+				<input class='eg-decay' type='range' min='0' max='1' step='0.05' value='0' name='egDecay' />
+			</label><br>
+			
+			<label for='egSustain'>Sustain (gain) 
+				<input class='eg-sustain' type='range' min='0' max='1' step='0.05' value='1' name='egSustain' />
+			</label><br>
+			
+			<label for='egRelease'>Release (time)
+				<input class='eg-release' type='range' min='0' max='1' step='0.05' value='0.1' name='egRelease' />
+			</label><br>
+
+			<!--Alter Pitch -->
+			<p>Alter Pitch: </p>
+			<label for='pitch1'>Pitch 1
+				<input class='Pitch1' type='range' min='0' max='2' step='0.05' value='1' name='pitch1' />
+			</label><br>
+
+			<label for='pitch2'>Pitch 2
+				<input class='Pitch2' type='range' min='0' max='2' step='0.05' value='1' name='pitch2' />
+			</label><br><br>
+
+			
+			<label for='Vibrato'>Vibrato: 
+                            <select name="Vibrato" class="Vibrato">
+                                <option value="false">Off</option>
+                                <option value="true">On</option>
+                            </select>
+                        </label> <br> <br>
+
+    <form>
+    Fade In:<br>
+    <input type="text" name="FadeIn" id = "FadeIn"><br>
+        
+        OR
+        
+        <br>
+        Fade Out:<br>
+        <input type="text" name="FadeOut" id = "FadeOut">
+            </form>
+
+                
+
+
+		</div>
+
+        <script src="scripts/qwerty-hancock.min.js"></script>
+        <script src="scripts/synth.js"></script>
+    </body>
+</html>
